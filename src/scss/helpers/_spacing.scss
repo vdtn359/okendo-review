@@ -11,6 +11,10 @@
 			}
 		}
 
+		.pad-#{$pixel} {
+			padding: #{$dimen}rem;
+		}
+
 		.min-width-#{$pixel} {
 			min-width: #{$dimen}rem !important;
 		}

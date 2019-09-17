@@ -1,7 +1,7 @@
 import path from 'path';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import { env, match } from '@webpack-blocks/core';
-import { css, file } from '@webpack-blocks/assets';
+import { file } from '@webpack-blocks/assets';
 import postcss from '@webpack-blocks/postcss';
 import eslint from '@webpack-blocks/eslint';
 import {
@@ -36,7 +36,7 @@ const webpackConfig = createConfig([
 	}),
 	resolve({
 		alias: {
-			'@root': paths.root,
+			'@app': paths.src,
 		},
 		extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
 	}),

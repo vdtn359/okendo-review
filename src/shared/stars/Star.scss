@@ -1,0 +1,28 @@
+@import '../../scss/variables/colors';
+
+.star-container {
+	display: inline-block;
+}
+
+.star {
+	display: inline-block;
+	color: $color-star-border;
+	position: relative;
+	overflow: hidden;
+	font-size: 3rem;
+
+	&--checked:before {
+		color: #fde16d;
+		content: '\2605';
+		position: absolute;
+		left: 0;
+	}
+
+	&--half:before {
+		color: #fde16d;
+		position: absolute;
+		content: '\2605';
+		width: 50%;
+		overflow: hidden;
+	}
+}

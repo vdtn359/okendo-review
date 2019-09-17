@@ -1,34 +1,31 @@
 {
-  "compilerOptions": {
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "module": "commonjs",
-    "target": "es5",
-    "baseUrl": "./",
-    "outDir": "./dist",
-    "allowJs": true,
-    "checkJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "jsx": "react",
-    "strictPropertyInitialization": false,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "diagnostics": false,
-    "noEmit": true,
-    "noImplicitAny": false,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "removeComments": true,
-    "sourceMap": false,
-    "paths": {}
-  },
-  "exclude": [
-    "node_modules"
-  ]
+	"compilerOptions": {
+		"lib": ["esnext", "dom"],
+		"module": "commonjs",
+		"target": "es5",
+		"baseUrl": "./",
+		"outDir": "./dist",
+		"allowJs": true,
+		"checkJs": false,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"jsx": "react",
+		"strictPropertyInitialization": false,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"diagnostics": false,
+		"noEmit": true,
+		"noImplicitAny": false,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"removeComments": true,
+		"sourceMap": false,
+		"paths": {
+			"@app/*": ["./src/*"]
+		}
+	},
+	"exclude": ["node_modules"]
 }
