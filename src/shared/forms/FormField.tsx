@@ -53,7 +53,7 @@ function InnerFieldComponent({
 			{...valueProps}
 			error={error}
 			onChange={(e, { value, checked }) => {
-				if (checked != null && value === '') {
+				if (checked != null && (value === '' || value == undefined)) {
 					value = !!checked;
 				}
 

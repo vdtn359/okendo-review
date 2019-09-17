@@ -5,13 +5,14 @@ import { Formik } from 'formik';
 import { Input } from '@app/shared/forms/InputField';
 import { TextArea } from '@app/shared/forms/TextAreaField';
 import { noop } from '@app/utils/object';
+import { YesNoButton } from '@app/shared/buttons/YesNoButton';
 
 const ReviewStepComponent: React.FC<any> = () => {
 	return (
-		<div className={'container container--white pad-20'}>
-			<Formik onSubmit={noop} initialValues={{}}>
-				{props => (
-					<form onSubmit={props.handleSubmit}>
+		<Formik onSubmit={noop} initialValues={{}}>
+			{props => (
+				<form onSubmit={props.handleSubmit}>
+					<div className={'container container--white pad-20'}>
 						<div className={'form-group'}>
 							<FormField name={'rating'} component={Star} componentProps={{ label: 'Your ratings' }} />
 						</div>
@@ -19,20 +20,29 @@ const ReviewStepComponent: React.FC<any> = () => {
 							<FormField
 								name={'reviewTitle'}
 								component={Input}
-								componentProps={{ label: 'Review Title' }}
+								componentProps={{ label: 'Review Title', id: 'reviewTitle' }}
 							/>
 						</div>
 						<div className={'form-group'}>
 							<FormField
 								name={'reviewBody'}
 								component={TextArea}
-								componentProps={{ label: 'Your Review' }}
+								componentProps={{ label: 'Your Review', id: 'reviewBody' }}
 							/>
 						</div>
-					</form>
-				)}
-			</Formik>
-		</div>
+						<div className={'form-group'}>
+							<FormField
+								name={'recommend'}
+								component={YesNoButton}
+								componentProps={{
+									label: 'Would you recommend this product?',
+								}}
+							/>
+						</div>
+					</div>
+				</form>
+			)}
+		</Formik>
 	);
 };
 

@@ -42,13 +42,13 @@
 
 		&--active {
 			&::before {
-				background-color: $color-step-active;
+				background-color: $color-accent;
 			}
 		}
 
 		&--completed {
 			&::before {
-				background-color: lighten($color-step-active, 0.5);
+				background-color: lighten($color-accent, 0.5);
 				content: '\2713';
 				color: $color-white;
 				text-align: center;
