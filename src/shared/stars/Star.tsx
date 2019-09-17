@@ -5,31 +5,35 @@ import { noop } from '@app/utils/object';
 import styles from './Star.scss';
 
 interface IProps {
+	label: string;
 	maxStars?: number;
 	value?: number;
-	onChange?: (value: number) => void;
+	onChange?: (event, { value: number }) => void;
 }
 
-const StarComponent: React.FC<IProps> = ({ maxStars = 5, value = 0, onChange = noop }) => {
+const StarComponent: React.FC<IProps> = ({ maxStars = 5, value = 0, label, onChange = noop }) => {
 	const [currentStars, setCurrentStar] = useState(value);
 	return (
-		<div className={styles.starContainer} onMouseLeave={() => onMouseLeave()}>
-			{range(0, maxStars).map((star, index) => {
-				return (
-					<span
-						key={star}
-						className={cn(styles.star, {
-							[styles.starChecked]: index + 1 <= currentStars,
-							[styles.starHalf]: index + 1 > currentStars && index < currentStars,
-						})}
-						onMouseMove={e => onMouseMove(e, index)}
-						onClick={() => onMouseClick()}
-					>
-						☆
-					</span>
-				);
-			})}
-		</div>
+		<>
+			<div>{label}</div>
+			<div className={styles.starContainer} onMouseLeave={() => onMouseLeave()}>
+				{range(0, maxStars).map((star, index) => {
+					return (
+						<span
+							key={star}
+							className={cn(styles.star, {
+								[styles.starChecked]: index + 1 <= currentStars,
+								[styles.starHalf]: index + 1 > currentStars && index < currentStars,
+							})}
+							onMouseMove={e => onMouseMove(e, index)}
+							onClick={event => onMouseClick(event)}
+						>
+							☆
+						</span>
+					);
+				})}
+			</div>
+		</>
 	);
 
 	function onMouseMove(e: React.MouseEvent, index) {
@@ -44,8 +48,8 @@ const StarComponent: React.FC<IProps> = ({ maxStars = 5, value = 0, onChange = n
 		setCurrentStar(value);
 	}
 
-	function onMouseClick() {
-		onChange(currentStars);
+	function onMouseClick(e) {
+		onChange(e, { value: currentStars });
 	}
 
 	function isWithinFirstHalf(event: React.MouseEvent) {
