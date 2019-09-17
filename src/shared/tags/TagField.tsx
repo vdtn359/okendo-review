@@ -4,7 +4,7 @@ import styles from './TagField.scss';
 
 interface IProps {
 	value: string[];
-	labels: string[];
+	tags: string[];
 	multiple: boolean;
 	label?: string;
 	sublabel?: any;
@@ -14,7 +14,7 @@ interface IProps {
 
 const TagFieldComponent: React.FC<IProps> = ({
 	value: selectedValues,
-	labels,
+	tags,
 	multiple,
 	label,
 	sublabel,
@@ -29,7 +29,7 @@ const TagFieldComponent: React.FC<IProps> = ({
 			<div className={styles.tagFieldLabel}>{label}</div>
 			<div className={styles.tagFieldSubLabel}>{sublabel}</div>
 			<div className={styles.tagFieldTagList}>
-				{labels.map(value => (
+				{tags.map(value => (
 					<div
 						className={cn(styles.tagFieldTag, {
 							[styles.tagFieldTagSelected]: selectedValues.includes(value),

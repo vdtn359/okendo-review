@@ -23,7 +23,7 @@
 		border-color: $color-grey-dark;
 		padding: 0.7rem 0.8rem;
 		margin: 0.4rem;
-		color: $color-dark-text;
+		color: $color-black;
 		border-radius: 0.2rem;
 		cursor: pointer;
 
@@ -34,6 +34,7 @@
 
 		&--disabled {
 			cursor: not-allowed;
+			color: $color-dark-text;
 		}
 	}
 }

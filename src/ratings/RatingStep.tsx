@@ -3,6 +3,8 @@ import { FormField } from '@app/shared/forms/FormField';
 import { Formik } from 'formik';
 import { NumberRange } from '@app/shared/number/NumberRangeField';
 import { TagField } from '@app/shared/tags/TagField';
+import { Select } from '@app/shared/forms/SelectField';
+import { COUNTRIES } from '@app/shared/countries';
 
 interface IProps {
 	onSubmit: () => void;
@@ -69,7 +71,7 @@ const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 								name={'produceStandout'}
 								component={TagField}
 								componentProps={{
-									labels: PRODUCT_STANDOUT,
+									tags: PRODUCT_STANDOUT,
 									label: 'Product Standouts',
 									sublabel: 'Choose up to 5 that best apply (optional)',
 									multiple: true,
@@ -89,7 +91,7 @@ const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 											Choose <b>one</b>
 										</span>
 									),
-									labels: AGE_RANGES,
+									tags: AGE_RANGES,
 								}}
 							/>
 						</div>
@@ -104,7 +106,17 @@ const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 											Choose <b>one</b>
 										</span>
 									),
-									labels: BOUGHT_FOR,
+									tags: BOUGHT_FOR,
+								}}
+							/>
+						</div>
+						<div className={'form-group pad-top-20'}>
+							<FormField
+								name={'boughtFor'}
+								component={Select}
+								componentProps={{
+									label: 'Country',
+									options: COUNTRIES,
 								}}
 							/>
 						</div>
