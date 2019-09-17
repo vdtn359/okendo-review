@@ -9,7 +9,7 @@ interface IProps {
 	maxLabel: string;
 	label: string;
 	value: number;
-	onChange: (e: any, { value: number }) => void;
+	onChange: (e: any, { value }: { value: number }) => void;
 }
 
 const NumberRangeComponent: React.FC<IProps> = ({ max = 5, value, minLabel, maxLabel, onChange, label }) => {

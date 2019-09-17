@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { RatingStep } from '@app/ratings/RatingStep';
 import { IStep, StepHeader } from './shared/step/StepHeader';
 import { ReviewStep } from './review/ReviewStep';
-import { RatingStep } from '@app/ratings/RatingStep';
 
 const steps: IStep[] = [
 	{

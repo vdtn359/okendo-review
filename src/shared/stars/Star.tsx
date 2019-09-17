@@ -8,7 +8,7 @@ interface IProps {
 	label: string;
 	maxStars?: number;
 	value?: number;
-	onChange?: (event, { value: number }) => void;
+	onChange?: (event, { value }: { value: number }) => void;
 }
 
 const StarComponent: React.FC<IProps> = ({ maxStars = 5, value = 0, label, onChange = noop }) => {

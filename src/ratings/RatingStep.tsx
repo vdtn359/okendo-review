@@ -1,15 +1,30 @@
 import React from 'react';
-import { Star } from '@app/shared/stars/Star';
 import { FormField } from '@app/shared/forms/FormField';
 import { Formik } from 'formik';
-import { Input } from '@app/shared/forms/InputField';
-import { TextArea } from '@app/shared/forms/TextAreaField';
-import { YesNoButton } from '@app/shared/buttons/YesNoButton';
 import { NumberRange } from '@app/shared/number/NumberRangeField';
+import { TagField } from '@app/shared/tags/TagField';
 
 interface IProps {
 	onSubmit: () => void;
 }
+
+const PRODUCT_STANDOUT = [
+	'Accurate Timekeeping',
+	'High Quality',
+	'Durable',
+	'Elegant',
+	'Good Weight',
+	'Versatile',
+	'Looks Expensive',
+	'Attracts Compliments',
+	'Unique',
+	'Great Gift',
+	'Great Value',
+];
+
+const AGE_RANGES = ['Under 18', '18 - 24', '25 - 34', '35 - 44', '45 - 54', '55 - 64', '65+'];
+const BOUGHT_FOR = ['Personal Use', 'Gift'];
+
 const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 	return (
 		<Formik onSubmit={onSubmit} initialValues={{}}>
@@ -49,12 +64,47 @@ const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 								}}
 							/>
 						</div>
+						<div className={'form-group pad-top-20'}>
+							<FormField
+								name={'produceStandout'}
+								component={TagField}
+								componentProps={{
+									labels: PRODUCT_STANDOUT,
+									label: 'Product Standouts',
+									sublabel: 'Choose up to 5 that best apply (optional)',
+									multiple: true,
+									maxSelection: 5,
+								}}
+							/>
+						</div>
+						<h4 className={'marg-top-20'}>About you</h4>
 						<div className={'form-group'}>
 							<FormField
-								name={'recommend'}
-								component={YesNoButton}
+								name={'ageGroup'}
+								component={TagField}
 								componentProps={{
-									label: 'Would you recommend this product?',
+									label: 'Age range',
+									sublabel: (
+										<span>
+											Choose <b>one</b>
+										</span>
+									),
+									labels: AGE_RANGES,
+								}}
+							/>
+						</div>
+						<div className={'form-group pad-top-20'}>
+							<FormField
+								name={'boughtFor'}
+								component={TagField}
+								componentProps={{
+									label: 'Bought For',
+									sublabel: (
+										<span>
+											Choose <b>one</b>
+										</span>
+									),
+									labels: BOUGHT_FOR,
 								}}
 							/>
 						</div>

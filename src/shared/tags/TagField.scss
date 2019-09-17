@@ -1,0 +1,39 @@
+@import '../../scss/variables/colors';
+@import '../../scss/base/mixins';
+
+.tag-field {
+	&__label {
+		margin-bottom: 0.3rem;
+	}
+
+	&__sub-label {
+		color: $color-dark-text;
+		font-size: 1.3rem;
+	}
+
+	&__tag-list {
+		display: flex;
+		flex-wrap: wrap;
+		padding-top: 1rem;
+		margin-top: 0.2rem;
+	}
+
+	&__tag {
+		background: $color-grey-dark;
+		border-color: $color-grey-dark;
+		padding: 0.7rem 0.8rem;
+		margin: 0.4rem;
+		color: $color-dark-text;
+		border-radius: 0.2rem;
+		cursor: pointer;
+
+		&--selected {
+			background: $color-accent;
+			border-color: $color-accent;
+		}
+
+		&--disabled {
+			cursor: not-allowed;
+		}
+	}
+}
