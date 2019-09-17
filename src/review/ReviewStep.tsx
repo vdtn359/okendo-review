@@ -4,10 +4,7 @@ import { FormField } from '@app/shared/forms/FormField';
 import { Formik } from 'formik';
 import { Input } from '@app/shared/forms/InputField';
 import { TextArea } from '@app/shared/forms/TextAreaField';
-import { noop } from '@app/utils/object';
 import { YesNoButton } from '@app/shared/buttons/YesNoButton';
-import shortcutIcon from '@app/svgs/shortcut.svg';
-import ReactSVG from 'react-inlinesvg';
 
 interface IProps {
 	onSubmit: () => void;
@@ -49,13 +46,13 @@ const ReviewStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 						<div>
 							By continuing you agree to our{' '}
 							<a className={'link'} href={'https://www.okendo.io/end-user-terms/'}>
-								Terms and Conditions{' '}
-								<ReactSVG src={shortcutIcon} style={{ width: '1.5rem', height: '1.5rem' }} />
+								Terms and Conditions
+								<i className="fas fa-external-link-alt" />
 							</a>
 							, and{' '}
 							<a className={'link'} href={'https://www.okendo.io/privacy-policy/'}>
-								Privacy Policy{' '}
-								<ReactSVG src={shortcutIcon} style={{ width: '1.5rem', height: '1.5rem' }} />
+								Privacy Policy
+								<i className="fas fa-external-link-alt" />
 							</a>{' '}
 						</div>
 						<button type={'submit'} className={'btn-cta marg-top-20'}>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { RatingStep } from '@app/ratings/RatingStep';
+import { MediaStep } from '@app/media/MediaStep';
 import { IStep, StepHeader } from './shared/step/StepHeader';
 import { ReviewStep } from './review/ReviewStep';
 
@@ -17,7 +18,7 @@ const steps: IStep[] = [
 		name: 'media',
 	},
 	{
-		title: 'Confirm',
+		title: 'Login',
 		name: 'confirm',
 	},
 ];
@@ -34,8 +35,9 @@ const ReviewFormComponent: React.FC<IProps> = ({ title }) => {
 				<span className={'color-grey text-big'}>{title}</span>
 			</StepHeader>
 			<div className={'marg-top-10'}>
-				{step === 1 && <ReviewStep onSubmit={nextStep} />}
-				{step === 0 && <RatingStep onSubmit={nextStep} />}
+				{step === 2 && <ReviewStep onSubmit={nextStep} />}
+				{step === 1 && <RatingStep onSubmit={nextStep} />}
+				{step === 0 && <MediaStep onSubmit={nextStep} />}
 			</div>
 		</>
 	);

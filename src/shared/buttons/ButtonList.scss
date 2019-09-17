@@ -1,0 +1,26 @@
+@import '../../scss/variables/colors';
+
+.button-list {
+	box-shadow: 0 0 0.1rem $color-shadow-light-black;
+	display: flex;
+	flex-direction: column;
+	border-radius: 0.5rem;
+	overflow: hidden;
+
+	&__button {
+		background-color: $color-black;
+		color: $color-grey-dark;
+		padding: 1.5rem;
+		cursor: pointer;
+
+		&--active {
+			background-color: $color-accent;
+			color: $color-white;
+		}
+
+		&:hover:not(&--active) {
+			background-color: $color-accent;
+			color: $color-black;
+		}
+	}
+}
