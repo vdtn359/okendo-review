@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IStep, StepHeader } from './shared/StepHeader';
 
 const steps: IStep[] = [
@@ -25,11 +25,18 @@ interface IProps {
 }
 
 const ReviewFormComponent: React.FC<IProps> = ({ title }) => {
+	const [step, setStep] = useState(0);
 	return (
-		<StepHeader steps={steps} current={1}>
-			{title}
+		<StepHeader steps={steps} current={step} onStepSelected={onStepSelected}>
+			<span className={'color-grey text-big'}>{title}</span>
 		</StepHeader>
 	);
+
+	function onStepSelected(selectedStep) {
+		if (selectedStep < step) {
+			setStep(selectedStep);
+		}
+	}
 };
 
 export const ReviewForm = ReviewFormComponent;

@@ -1,3 +1,59 @@
+@import '../scss/variables/colors';
+@import '../scss/base/mixins';
+
 .step-header {
-	background-color: white;
+	&__container {
+		background-color: $color-white;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 2.5rem 0;
+		box-shadow: 0 0 0.4rem $color-shadow-light-black;
+	}
+
+	&__title {
+		font-size: 2rem;
+		margin-top: 2rem;
+		color: $color-black;
+	}
+
+	&__steps {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	&__step {
+		position: relative;
+		padding-top: 2rem;
+		&::before {
+			content: '';
+			background: $color-white;
+			border-radius: 50%;
+			box-shadow: 0 0 0.4rem $color-shadow-light-black;
+			display: block;
+			height: 2.4rem;
+			width: 2.4rem;
+			padding-left: 0.1rem;
+			padding-top: 0.1rem;
+			@include absoluteCenter();
+			top: 0;
+		}
+
+		&--active {
+			&::before {
+				background-color: $color-step-active;
+			}
+		}
+
+		&--completed {
+			&::before {
+				background-color: lighten($color-step-active, 0.5);
+				content: '\2713';
+				color: $color-white;
+				text-align: center;
+				font-weight: 700;
+			}
+		}
+	}
 }
