@@ -6,6 +6,8 @@ import { Input } from '@app/shared/forms/InputField';
 import { TextArea } from '@app/shared/forms/TextAreaField';
 import { noop } from '@app/utils/object';
 import { YesNoButton } from '@app/shared/buttons/YesNoButton';
+import shortcutIcon from '@app/svgs/shortcut.svg';
+import ReactSVG from 'react-inlinesvg';
 
 const ReviewStepComponent: React.FC<any> = () => {
 	return (
@@ -39,6 +41,23 @@ const ReviewStepComponent: React.FC<any> = () => {
 								}}
 							/>
 						</div>
+					</div>
+					<div className={'container text-align-center marg-top-30 pad-bottom-20'}>
+						<div>
+							By continuing you agree to our{' '}
+							<a className={'link'} href={'https://www.okendo.io/end-user-terms/'}>
+								Terms and Conditions{' '}
+								<ReactSVG src={shortcutIcon} style={{ width: '1.5rem', height: '1.5rem' }} />
+							</a>
+							, and{' '}
+							<a className={'link'} href={'https://www.okendo.io/privacy-policy/'}>
+								Privacy Policy{' '}
+								<ReactSVG src={shortcutIcon} style={{ width: '1.5rem', height: '1.5rem' }} />
+							</a>{' '}
+						</div>
+						<button type={'submit'} className={'btn-cta marg-top-20'}>
+							Agree & Continue
+						</button>
 					</div>
 				</form>
 			)}

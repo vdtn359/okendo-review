@@ -1,0 +1,13 @@
+:global {
+	.btn-cta {
+		background-color: $color-accent;
+		text-align: center;
+		border: none;
+		outline: none;
+		width: 100%;
+		padding: 2rem;
+		color: $color-black;
+		cursor: pointer;
+		font-size: 2rem;
+	}
+}
