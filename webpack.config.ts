@@ -22,9 +22,10 @@ import { extractCss } from './build/plugins/extract-css';
 import { html } from './build/plugins/html';
 import paths from './build/paths';
 import { transpile } from './build/plugins/transpile';
+import { cssModules } from './build/plugins/css-loader';
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
-const isDev = process.env.NODE_ENV === 'dev';
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const isDev = process.env.NODE_ENV === 'development';
 
 const webpackConfig = createConfig([
 	setMode(isDev ? 'development' : 'production'),
@@ -60,7 +61,7 @@ const webpackConfig = createConfig([
 		template: path.resolve(paths.root, 'index.html'),
 		favicon: path.resolve(paths.root, 'favicon.ico'),
 	}),
-	env('dev', [
+	env('development', [
 		devServer({
 			headers: {
 				'Access-Control-Allow-Origin': '*',
@@ -73,22 +74,18 @@ const webpackConfig = createConfig([
 		match(
 			['*.css', '!*node_modules*'],
 			[
-				css({
+				cssModules({
 					sourceMap: true,
-					styleLoader: {
-						sourceMap: true,
-					},
+					styleLoader: {},
 				}),
 			]
 		),
 		match(
 			['*.scss', '!*node_modules*'],
 			[
-				css({
+				cssModules({
 					sourceMap: true,
-					styleLoader: {
-						sourceMap: true,
-					},
+					styleLoader: {},
 				}),
 				sass({
 					sourceMap: true,
@@ -97,7 +94,7 @@ const webpackConfig = createConfig([
 		),
 	]),
 	env(
-		['prod'],
+		['production'],
 		[
 			sourceMaps('nosources-source-map'),
 			match(
@@ -106,7 +103,7 @@ const webpackConfig = createConfig([
 					extractCss({
 						filename: '[name].[contenthash:8].css',
 					}),
-					css({
+					cssModules({
 						styleLoader: false,
 						sourceMap: false,
 					}),
@@ -124,7 +121,7 @@ const webpackConfig = createConfig([
 					extractCss({
 						filename: '[name].[contenthash:8].css',
 					}),
-					css({
+					cssModules({
 						styleLoader: false,
 						sourceMap: false,
 					}),
