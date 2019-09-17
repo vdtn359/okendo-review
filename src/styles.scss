@@ -1,3 +1,7 @@
-body {
-  color: red;
-}
+@import 'scss/variables/colors';
+
+@import 'scss/base/mixins';
+@import 'scss/helpers/_spacing.scss';
+@import 'scss/helpers/_layout.scss';
+@import 'scss/base/base';
+@import 'scss/base/container';

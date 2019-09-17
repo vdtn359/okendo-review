@@ -1,0 +1,13 @@
+:global {
+	.flex {
+		display: flex;
+	}
+
+	.flex-align-center {
+		align-items: center;
+	}
+
+	.flex-direction-column {
+		flex-direction: column;
+	}
+}
