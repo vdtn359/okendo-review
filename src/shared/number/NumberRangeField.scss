@@ -1,0 +1,65 @@
+@import '../../scss/variables/colors';
+@import '../../scss/base/mixins';
+
+.slider-container {
+	position: relative;
+	padding: 0 1rem;
+}
+.slider {
+	height: 0.4rem;
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+	@include absoluteCenter();
+	background-color: $color-grey-dark;
+}
+
+.slider-nums {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+}
+
+.slider-num {
+	position: relative;
+	z-index: 0;
+	cursor: pointer;
+	&::before {
+		background: $color-grey-dark;
+		border-radius: 50%;
+		content: '';
+		height: 3rem;
+		z-index: -1;
+		width: 3rem;
+		@include absoluteCenter();
+		transition: width 0.2s, height 0.2s;
+	}
+
+	&-selected {
+		color: $color-white;
+		&::before {
+			background: $color-accent;
+		}
+	}
+
+	&:hover {
+		&::before {
+			background: $color-white;
+			border: 0.4rem solid $color-accent;
+			height: 3.2rem;
+			width: 3.2rem;
+		}
+		color: $color-accent;
+	}
+}
+
+.slider-labels {
+	display: flex;
+	margin-top: 1rem;
+	justify-content: space-between;
+}
+
+.slider-label {
+	color: $color-grey-dark;
+	font-size: 1.3rem;
+}
