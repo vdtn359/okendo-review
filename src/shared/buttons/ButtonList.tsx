@@ -8,10 +8,10 @@ interface IProps {
 }
 
 interface IButton {
-	text: string;
+	content: any;
 	key: string;
 	icon?: string;
-	onClick: (e: React.MouseEvent) => void;
+	onClick?: (e: React.MouseEvent) => void;
 }
 
 const ButtonListComponent: React.FC<IProps> = ({ buttons }) => {
@@ -27,7 +27,7 @@ const ButtonListComponent: React.FC<IProps> = ({ buttons }) => {
 						onClick={button.onClick}
 					>
 						<i className={`fas ${button.icon} marg-right-10`} />
-						{button.text}
+						{button.content}
 					</div>
 				);
 			})}

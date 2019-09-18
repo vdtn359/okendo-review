@@ -13,22 +13,34 @@ const MediaStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 					<ButtonList
 						buttons={[
 							{
-								text: 'Add a video review',
+								content: 'Add a video review',
 								key: 'add_video',
 								icon: 'fa-video',
 								onClick: addVideo,
 							},
 							{
-								text: 'Record a new video',
+								content: 'Record a new video',
 								key: 'record_video',
 								icon: 'fa-microphone',
 								onClick: recordVideo,
 							},
 							{
-								text: 'Upload an existing video',
+								content: (
+									<div className={'flex-grow'}>
+										<label className={'full-width'} htmlFor={'upload-video'}>
+											Upload an existing video
+										</label>
+										<input
+											id={'upload-video'}
+											type={'file'}
+											className={'hidden'}
+											accept="video/*"
+											onChange={uploadVideos}
+										/>
+									</div>
+								),
 								key: 'upload_video',
 								icon: 'fa-upload',
-								onClick: uploadVideos,
 							},
 						]}
 					/>
@@ -38,16 +50,28 @@ const MediaStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 					<ButtonList
 						buttons={[
 							{
-								text: 'Add photos',
+								content: 'Add photos',
 								key: 'add_photos',
 								icon: 'fa-image',
 								onClick: addPhotos,
 							},
 							{
-								text: 'Upload photos',
+								content: (
+									<div className={'flex-grow'}>
+										<label className={'full-width'} htmlFor={'upload-image'}>
+											Upload a photo
+										</label>
+										<input
+											id={'upload-image'}
+											type={'file'}
+											className={'hidden'}
+											accept="image/*"
+											onChange={uploadPhotos}
+										/>
+									</div>
+								),
 								key: 'upload_photos',
 								icon: 'fa-upload',
-								onClick: uploadPhotos,
 							},
 						]}
 					/>
