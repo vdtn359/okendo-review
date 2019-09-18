@@ -23,3 +23,4 @@ jobs:
 
             - run: aws s3 rm s3://okendo-review --recursive
             - run: aws s3 sync dist/ s3://okendo-review
+            - run: aws cloudfront create-invalidation --distribution-id E38XSMKBYOAE0O --paths /
