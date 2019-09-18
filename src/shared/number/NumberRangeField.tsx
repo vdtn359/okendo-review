@@ -9,13 +9,22 @@ interface IProps {
 	maxLabel: string;
 	label: string;
 	value: number;
+	error: string;
 	onChange: (e: any, { value }: { value: number }) => void;
 }
 
-const NumberRangeComponent: React.FC<IProps> = ({ max = 5, value, minLabel, maxLabel, onChange, label }) => {
+const NumberRangeComponent: React.FC<IProps> = ({ max = 5, value, minLabel, maxLabel, onChange, label, error }) => {
 	return (
 		<div>
-			<div>{label}</div>
+			{label && (
+				<div
+					className={cn({
+						error: !!error,
+					})}
+				>
+					{label}
+				</div>
+			)}
 			<div className={'marg-top-20'}>
 				<div className={styles.sliderContainer}>
 					<div className={styles.slider} />
@@ -40,6 +49,7 @@ const NumberRangeComponent: React.FC<IProps> = ({ max = 5, value, minLabel, maxL
 					<span className={styles.sliderLabel}>{maxLabel}</span>
 				</div>
 			</div>
+			{error && <span className={'error-text'}>{error}</span>}
 		</div>
 	);
 };

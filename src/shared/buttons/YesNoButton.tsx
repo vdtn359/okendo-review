@@ -19,18 +19,18 @@ const YesNoButtonComponent: React.FC<IProps> = ({ label, checked, onChange, erro
 			>
 				{label}
 			</label>
-			<div className={styles.btnContainer}>
+			<div className={styles.btnList}>
 				<div
-					className={cn(`${styles.btnToggle}`, {
-						[styles.btnToggleSelected]: checked === true,
+					className={cn(`${styles.btnListButton}`, {
+						[styles.btnListButtonSelected]: checked === true,
 					})}
 					onClick={e => onChange(e, { checked: true })}
 				>
 					YES
 				</div>
 				<div
-					className={cn(`${styles.btnToggle}`, {
-						[styles.btnToggleSelected]: checked === false,
+					className={cn(`${styles.btnListButton}`, {
+						[styles.btnListButtonSelected]: checked === false,
 					})}
 					onClick={e => onChange(e, { checked: false })}
 				>

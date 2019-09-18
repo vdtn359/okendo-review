@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './TextAreaField.scss';
 import cn from 'classnames';
+import styles from './TextAreaField.scss';
 
 const TextAreaComponent: React.FC<any> = ({ label, name, onChange, error, ...props }) => {
 	return (

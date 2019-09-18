@@ -5,6 +5,8 @@ import { NumberRange } from '@app/shared/number/NumberRangeField';
 import { TagField } from '@app/shared/tags/TagField';
 import { Select } from '@app/shared/forms/SelectField';
 import { COUNTRIES } from '@app/shared/countries';
+import { getSchemaByType } from 'yup-decorator';
+import { RatingModel } from '@app/ratings/rating.model';
 
 interface IProps {
 	onSubmit: () => void;
@@ -29,7 +31,14 @@ const BOUGHT_FOR = ['Personal Use', 'Gift'];
 
 const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 	return (
-		<Formik onSubmit={onSubmit} initialValues={{}}>
+		<Formik
+			onSubmit={onSubmit}
+			initialValues={{
+				productStandout: [],
+				country: 'Australia',
+			}}
+			validationSchema={getSchemaByType(RatingModel)}
+		>
 			{props => (
 				<form onSubmit={props.handleSubmit}>
 					<div className={'container container--white pad-20'}>
@@ -68,7 +77,7 @@ const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 						</div>
 						<div className={'form-group pad-top-20'}>
 							<FormField
-								name={'produceStandout'}
+								name={'productStandout'}
 								component={TagField}
 								componentProps={{
 									tags: PRODUCT_STANDOUT,
@@ -112,7 +121,7 @@ const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 						</div>
 						<div className={'form-group pad-top-20'}>
 							<FormField
-								name={'boughtFor'}
+								name={'country'}
 								component={Select}
 								componentProps={{
 									label: 'Country',
@@ -126,6 +135,7 @@ const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 							Next
 						</button>
 					</div>
+					Heyyy {JSON.stringify(props.errors)}
 				</form>
 			)}
 		</Formik>

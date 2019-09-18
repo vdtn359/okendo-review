@@ -6,6 +6,7 @@ interface IProps {
 	value: string[];
 	tags: string[];
 	multiple: boolean;
+	error: string;
 	label?: string;
 	sublabel?: any;
 	maxSelection?: number;
@@ -18,6 +19,7 @@ const TagFieldComponent: React.FC<IProps> = ({
 	multiple,
 	label,
 	sublabel,
+	error,
 	onChange,
 	maxSelection = Number.MAX_VALUE,
 }) => {
@@ -26,7 +28,15 @@ const TagFieldComponent: React.FC<IProps> = ({
 	}
 	return (
 		<div className={styles.tagField}>
-			<div className={styles.tagFieldLabel}>{label}</div>
+			{label && (
+				<div
+					className={cn(styles.tagFieldLabel, {
+						error: !!error,
+					})}
+				>
+					{label}
+				</div>
+			)}
 			<div className={styles.tagFieldSubLabel}>{sublabel}</div>
 			<div className={styles.tagFieldTagList}>
 				{tags.map(value => (
@@ -43,6 +53,7 @@ const TagFieldComponent: React.FC<IProps> = ({
 					</div>
 				))}
 			</div>
+			{error && <span className={'error-text'}>{error}</span>}
 		</div>
 	);
 
