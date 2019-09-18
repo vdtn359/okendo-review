@@ -143,7 +143,6 @@ const RatingStepComponent: React.FC<IProps> = ({ onSubmit, rating, saveRatingFor
 							Next
 						</button>
 					</div>
-					Heyyy {JSON.stringify(props.errors)}
 				</form>
 			)}
 		</Formik>
