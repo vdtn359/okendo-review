@@ -31,7 +31,7 @@
 			background: $color-white;
 			border-radius: 50%;
 			box-shadow: 0 0 0.4rem $color-shadow-light-black;
-			display: block;
+			display: inline-block;
 			height: 2.4rem;
 			width: 2.4rem;
 			padding-left: 0.1rem;
@@ -48,12 +48,12 @@
 
 		&--completed {
 			&::before {
-				background-color: lighten($color-accent, 0.5);
-				content: '\F00C';
+				content: '\f00c';
 				font-family: 'Font Awesome\ 5 Free';
+				font-weight: 700;
+				background-color: lighten($color-accent, 0.5);
 				color: $color-white;
 				text-align: center;
-				font-weight: 700;
 				padding: 0.5rem;
 			}
 		}

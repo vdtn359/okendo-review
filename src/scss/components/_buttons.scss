@@ -9,5 +9,10 @@
 		color: $color-black;
 		cursor: pointer;
 		font-size: 2rem;
+
+		&--small {
+			padding: 1rem;
+			font-size: 1.6rem;
+		}
 	}
 }

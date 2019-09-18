@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Field, FieldConfig, FieldProps, getIn, FormikContext } from 'formik';
-import { shouldUpdate, pure } from 'recompose';
+import { Field, FieldConfig, FieldProps, FormikContext, getIn } from 'formik';
+import { pure, shouldUpdate } from 'recompose';
 import { isEqual } from 'lodash';
 import { noop } from '@app/utils/object';
 

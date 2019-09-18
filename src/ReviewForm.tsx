@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { RatingStep } from '@app/ratings/RatingStep';
 import { MediaStep } from '@app/media/MediaStep';
+import { ConfirmStep } from '@app/confirm/ConfirmStep';
 import { IStep, StepHeader } from './shared/step/StepHeader';
 import { ReviewStep } from './review/ReviewStep';
 
@@ -35,9 +36,10 @@ const ReviewFormComponent: React.FC<IProps> = ({ title }) => {
 				<span className={'color-grey text-big'}>{title}</span>
 			</StepHeader>
 			<div className={'marg-top-10'}>
-				{step === 2 && <ReviewStep onSubmit={nextStep} />}
+				{step === 0 && <ReviewStep onSubmit={nextStep} />}
 				{step === 1 && <RatingStep onSubmit={nextStep} />}
-				{step === 0 && <MediaStep onSubmit={nextStep} />}
+				{step === 2 && <MediaStep onSubmit={nextStep} />}
+				{step === 3 && <ConfirmStep onSubmit={submit} />}
 			</div>
 		</>
 	);
@@ -50,6 +52,10 @@ const ReviewFormComponent: React.FC<IProps> = ({ title }) => {
 
 	function nextStep() {
 		setStep(step + 1);
+	}
+
+	function submit() {
+		//TODO dosomething
 	}
 };
 

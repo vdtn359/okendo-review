@@ -79,7 +79,7 @@ const MediaStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 			</div>
 			<div className={'container text-align-center marg-top-30 pad-bottom-20'}>
 				<button onClick={onSubmit} className={'btn-cta marg-top-20'}>
-					Next
+					Skip
 				</button>
 			</div>
 		</>
