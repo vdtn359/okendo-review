@@ -21,6 +21,12 @@
 		color: $color-grey-dark;
 	}
 
+	&:hover ~ &:after,
+	&--half:hover:after {
+		font-weight: 400;
+		color: #fde16d;
+	}
+
 	&--checked:after {
 		color: #fde16d;
 		content: '\f005';

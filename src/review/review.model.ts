@@ -6,7 +6,7 @@ export class ReviewModel {
 		a
 			.number()
 			.required('Please select a rating')
-			.min(1)
+			.min(0.5)
 			.max(5)
 	)
 	rating: number;
