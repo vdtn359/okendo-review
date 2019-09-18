@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { RatingStep } from '@app/ratings/RatingStep';
-import { MediaStep } from '@app/media/MediaStep';
-import { ConfirmStep } from '@app/confirm/ConfirmStep';
-import { IStep, StepHeader } from './shared/step/StepHeader';
-import { ReviewStep } from './review/ReviewStep';
+import React, { useState } from "react";
+import { RatingStep } from "@app/ratings/RatingStep";
+import { MediaStep } from "@app/media/MediaStep";
+import { ConfirmStep } from "@app/confirm/ConfirmStep";
+import { IStep, StepHeader } from "./shared/step/StepHeader";
+import { ReviewStep } from "./review/ReviewStep";
 
 const steps: IStep[] = [
 	{

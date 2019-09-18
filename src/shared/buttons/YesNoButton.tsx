@@ -1,6 +1,6 @@
-import React from 'react';
-import cn from 'classnames';
-import styles from './YesNoButton.scss';
+import React from "react";
+import cn from "classnames";
+import styles from "./YesNoButton.scss";
 
 interface IProps {
 	label: string;

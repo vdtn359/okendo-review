@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { Field, FieldConfig, FieldProps, FormikContext, getIn } from 'formik';
-import { pure, shouldUpdate } from 'recompose';
-import { isEqual } from 'lodash';
-import { noop } from '@app/utils/object';
+import React, { useEffect } from "react";
+import { Field, FieldConfig, FieldProps, FormikContext, getIn } from "formik";
+import { pure, shouldUpdate } from "recompose";
+import { isEqual } from "lodash";
+import { noop } from "@app/utils/object";
 
 export interface FormFieldEvents {
 	onChange?: (e: React.ChangeEvent<any>, params?: { name?: string; value?: any }) => void;

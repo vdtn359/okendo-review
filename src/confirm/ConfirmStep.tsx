@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import cn from 'classnames';
-import { Formik } from 'formik';
-import { FormField } from '@app/shared/forms/FormField';
-import { Input } from '@app/shared/forms/InputField';
-import { getSchemaByType } from 'yup-decorator';
-import { GuessLoginModel } from '@app/confirm/confirm.model';
-import styles from './ConfirmStep.scss';
+import React, { useState } from "react";
+import cn from "classnames";
+import { Formik } from "formik";
+import { FormField } from "@app/shared/forms/FormField";
+import { Input } from "@app/shared/forms/InputField";
+import { getSchemaByType } from "yup-decorator";
+import { GuessLoginModel } from "@app/confirm/confirm.model";
+import styles from "./ConfirmStep.scss";
 
 interface IProps {
 	onSubmit: () => void;

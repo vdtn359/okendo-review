@@ -1,15 +1,19 @@
-import React from 'react';
-import { FormField } from '@app/shared/forms/FormField';
-import { Formik } from 'formik';
-import { NumberRange } from '@app/shared/number/NumberRangeField';
-import { TagField } from '@app/shared/tags/TagField';
-import { Select } from '@app/shared/forms/SelectField';
-import { COUNTRIES } from '@app/shared/countries';
-import { getSchemaByType } from 'yup-decorator';
-import { RatingModel } from '@app/ratings/rating.model';
+import React from "react";
+import { FormField } from "@app/shared/forms/FormField";
+import { Formik } from "formik";
+import { connect } from "react-redux";
+import { NumberRange } from "@app/shared/number/NumberRangeField";
+import { TagField } from "@app/shared/tags/TagField";
+import { Select } from "@app/shared/forms/SelectField";
+import { COUNTRIES } from "@app/shared/countries";
+import { getSchemaByType } from "yup-decorator";
+import { RatingModel } from "@app/ratings/rating.model";
+import { saveRatingForm } from "@app/action";
 
 interface IProps {
 	onSubmit: () => void;
+	rating: RatingModel;
+	saveRatingForm: (formData: RatingModel) => void;
 }
 
 const PRODUCT_STANDOUT = [
@@ -29,13 +33,17 @@ const PRODUCT_STANDOUT = [
 const AGE_RANGES = ['Under 18', '18 - 24', '25 - 34', '35 - 44', '45 - 54', '55 - 64', '65+'];
 const BOUGHT_FOR = ['Personal Use', 'Gift'];
 
-const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
+const RatingStepComponent: React.FC<IProps> = ({ onSubmit, rating, saveRatingForm }) => {
 	return (
 		<Formik
-			onSubmit={onSubmit}
+			onSubmit={values => {
+				saveRatingForm(values);
+				onSubmit();
+			}}
 			initialValues={{
 				productStandout: [],
 				country: 'Australia',
+				...rating,
 			}}
 			validationSchema={getSchemaByType(RatingModel)}
 		>
@@ -142,4 +150,9 @@ const RatingStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 	);
 };
 
-export const RatingStep = RatingStepComponent;
+export const RatingStep = connect(
+	(state, ownProps) => ({ ...ownProps, rating: state.reviewForm.rating }),
+	{
+		saveRatingForm,
+	}
+)(RatingStepComponent);

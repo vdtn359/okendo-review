@@ -1,19 +1,30 @@
-import React from 'react';
-import { Star } from '@app/shared/stars/Star';
-import { FormField } from '@app/shared/forms/FormField';
-import { Formik } from 'formik';
-import { Input } from '@app/shared/forms/InputField';
-import { TextArea } from '@app/shared/forms/TextAreaField';
-import { YesNoButton } from '@app/shared/buttons/YesNoButton';
-import { getSchemaByType } from 'yup-decorator';
-import { ReviewModel } from '@app/review/review.model';
+import React from "react";
+import { Star } from "@app/shared/stars/Star";
+import { FormField } from "@app/shared/forms/FormField";
+import { Formik } from "formik";
+import { connect } from "react-redux";
+import { Input } from "@app/shared/forms/InputField";
+import { TextArea } from "@app/shared/forms/TextAreaField";
+import { YesNoButton } from "@app/shared/buttons/YesNoButton";
+import { getSchemaByType } from "yup-decorator";
+import { ReviewModel } from "@app/review/review.model";
+import { saveReviewForm } from "@app/action";
 
 interface IProps {
 	onSubmit: () => void;
+	review: ReviewModel;
+	saveReviewForm: (form: ReviewModel) => void;
 }
-const ReviewStepComponent: React.FC<IProps> = ({ onSubmit }) => {
+const ReviewStepComponent: React.FC<IProps> = ({ onSubmit, review, saveReviewForm }) => {
 	return (
-		<Formik onSubmit={onSubmit} initialValues={{}} validationSchema={getSchemaByType(ReviewModel)}>
+		<Formik
+			onSubmit={values => {
+				saveReviewForm(values);
+				onSubmit();
+			}}
+			initialValues={review}
+			validationSchema={getSchemaByType(ReviewModel)}
+		>
 			{props => (
 				<form onSubmit={props.handleSubmit}>
 					<div className={'container container--white pad-20'}>
@@ -67,4 +78,9 @@ const ReviewStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 	);
 };
 
-export const ReviewStep = ReviewStepComponent;
+export const ReviewStep = connect(
+	(state, ownProps) => ({ ...ownProps, review: state.reviewForm.review }),
+	{
+		saveReviewForm,
+	}
+)(ReviewStepComponent);

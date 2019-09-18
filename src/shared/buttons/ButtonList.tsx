@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import cn from 'classnames';
-import styles from './ButtonList.scss';
+import cn from "classnames";
+import styles from "./ButtonList.scss";
 
 interface IProps {
 	buttons: IButton[];

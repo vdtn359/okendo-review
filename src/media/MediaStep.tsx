@@ -1,5 +1,5 @@
-import React from 'react';
-import { ButtonList } from '@app/shared/buttons/ButtonList';
+import React from "react";
+import { ButtonList } from "@app/shared/buttons/ButtonList";
 
 interface IProps {
 	onSubmit: () => void;
