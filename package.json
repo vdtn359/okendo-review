@@ -15,7 +15,9 @@
 		"react-redux": "7.1.1",
 		"recompose": "0.30.0",
 		"redux": "4.0.4",
-		"ts-node": "8.4.1"
+		"ts-node": "8.4.1",
+		"yup": "0.27.0",
+		"yup-decorator": "2.0.0"
 	},
 	"devDependencies": {
 		"@babel/core": "7.6.0",
@@ -37,12 +39,14 @@
 		"@webpack-blocks/postcss": "2.0.1",
 		"@webpack-blocks/sass": "2.0.1",
 		"@webpack-blocks/webpack": "2.0.1",
+		"autoprefixer": "9.6.1",
 		"babel-loader": "8.0.6",
 		"babel-plugin-transform-typescript-metadata": "0.2.2",
-		"css-loader": "3.2.0",
 		"clean-webpack-plugin": "3.0.0",
 		"copy-webpack-plugin": "5.0.4",
 		"core-js": "3.2.1",
+		"css-loader": "3.2.0",
+		"cssnano": "4.1.10",
 		"eslint": "6.4.0",
 		"eslint-config-prettier": "6.1.0",
 		"eslint-loader": "3.0.0",
@@ -80,5 +84,10 @@
 		]
 	},
 	"author": "Tuan Nguyen <vdtn359@gmail.com>",
-	"license": "ISC"
+	"license": "ISC",
+	"browserslist": [
+		"last 2 versions",
+		"ie >= 9",
+		"safari >= 8"
+	]
 }

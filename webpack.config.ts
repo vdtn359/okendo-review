@@ -93,51 +93,48 @@ const webpackConfig = createConfig([
 			]
 		),
 	]),
-	env(
-		['production'],
-		[
-			sourceMaps('nosources-source-map'),
-			match(
-				['*.css', '!*node_modules*'],
-				[
-					extractCss({
-						filename: '[name].[contenthash:8].css',
-					}),
-					cssModules({
-						styleLoader: false,
-						sourceMap: false,
-					}),
-					postcss({
-						config: {
-							path: paths.root,
-						},
-						sourceMap: false,
-					}),
-				]
-			),
-			match(
-				['*.scss', '!*node_modules*'],
-				[
-					extractCss({
-						filename: '[name].[contenthash:8].css',
-					}),
-					cssModules({
-						styleLoader: false,
-						sourceMap: false,
-					}),
-					postcss({
-						config: {
-							path: paths.root,
-						},
-						sourceMap: false,
-					}),
-					sass({
-						sourceMap: false,
-					}),
-				]
-			),
-		]
-	),
+	env('production', [
+		sourceMaps('nosources-source-map'),
+		match(
+			['*.css', '!*node_modules*'],
+			[
+				extractCss({
+					filename: '[name].[contenthash:8].css',
+				}),
+				cssModules({
+					styleLoader: false,
+					sourceMap: false,
+				}),
+				postcss({
+					config: {
+						path: paths.root,
+					},
+					sourceMap: false,
+				}),
+			]
+		),
+		match(
+			['*.scss', '!*node_modules*'],
+			[
+				extractCss({
+					filename: '[name].[contenthash:8].css',
+				}),
+				cssModules({
+					styleLoader: false,
+					sourceMap: false,
+				}),
+				postcss({
+					config: {
+						path: paths.root,
+					},
+					sourceMap: false,
+				}),
+				sass({
+					sourceMap: false,
+				}),
+			]
+		),
+	]),
 	eslint({
 		emitWarning: true,
 	}),
