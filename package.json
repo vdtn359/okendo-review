@@ -85,7 +85,7 @@
 		]
 	},
 	"author": "Tuan Nguyen <vdtn359@gmail.com>",
-	"license": "ISC",
+	"license": "MIT",
 	"browserslist": [
 		"last 2 versions",
 		"ie >= 9",
