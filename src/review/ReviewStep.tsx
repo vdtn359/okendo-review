@@ -60,12 +60,12 @@ const ReviewStepComponent: React.FC<IProps> = ({ onSubmit, review, saveReviewFor
 							By continuing you agree to our{' '}
 							<a className={'link'} href={'https://www.okendo.io/end-user-terms/'}>
 								Terms and Conditions
-								<i className="fas fa-external-link-alt" />
+								<i className="fas fa-external-link-alt marg-left-5" />
 							</a>
 							, and{' '}
 							<a className={'link'} href={'https://www.okendo.io/privacy-policy/'}>
 								Privacy Policy
-								<i className="fas fa-external-link-alt" />
+								<i className="fas fa-external-link-alt marg-left-5" />
 							</a>{' '}
 						</div>
 						<button type={'submit'} className={'btn-cta marg-top-20'}>
