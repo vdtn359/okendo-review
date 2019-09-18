@@ -35,14 +35,23 @@ const ReviewStepComponent: React.FC<IProps> = ({ onSubmit, review, saveReviewFor
 							<FormField
 								name={'reviewTitle'}
 								component={Input}
-								componentProps={{ label: 'Review Title', id: 'reviewTitle' }}
+								componentProps={{
+									label: 'Review Title',
+									id: 'reviewTitle',
+									placeholder: 'Summary of your experience',
+								}}
 							/>
 						</div>
 						<div className={'form-group'}>
 							<FormField
 								name={'reviewBody'}
 								component={TextArea}
-								componentProps={{ label: 'Your Review', id: 'reviewBody' }}
+								componentProps={{
+									label: 'Your Review',
+									id: 'reviewBody',
+									placeholder:
+										'Give us some detail about what you liked and disliked about the product',
+								}}
 							/>
 						</div>
 						<div className={'form-group'}>
