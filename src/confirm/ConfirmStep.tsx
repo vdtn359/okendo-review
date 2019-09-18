@@ -4,8 +4,8 @@ import { Formik } from 'formik';
 import { FormField } from '@app/shared/forms/FormField';
 import { Input } from '@app/shared/forms/InputField';
 import { getSchemaByType } from 'yup-decorator';
+import { GuessLoginModel } from '@app/confirm/confirm.model';
 import styles from './ConfirmStep.scss';
-import { GuessLoginModel } from "@app/confirm/confirm.model";
 
 interface IProps {
 	onSubmit: () => void;

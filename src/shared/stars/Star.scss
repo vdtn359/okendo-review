@@ -2,27 +2,37 @@
 
 .star-container {
 	display: inline-block;
+	margin-top: 1rem;
 }
 
 .star {
-	display: inline-block;
-	color: $color-star-border;
 	position: relative;
-	overflow: hidden;
-	font-size: 3rem;
+	font-weight: 900;
+	width: 4rem;
+	height: 4rem;
+	display: inline-block;
 
-	&--checked:before {
-		color: #fde16d;
-		content: '\2605';
+	&:after {
+		font-size: 3rem;
+		font-family: 'Font Awesome 5 Free';
+		content: '\f005';
 		position: absolute;
 		left: 0;
+		color: $color-grey-dark;
+	}
+
+	&--checked:after {
+		color: #fde16d;
+		content: '\f005';
 	}
 
 	&--half:before {
+		font-size: 3rem;
+		font-family: 'Font Awesome 5 Free';
+		content: '\f089';
 		color: #fde16d;
 		position: absolute;
-		content: '\2605';
-		width: 50%;
-		overflow: hidden;
+		left: 0;
+		z-index: 1;
 	}
 }

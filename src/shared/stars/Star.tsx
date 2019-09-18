@@ -34,9 +34,7 @@ const StarComponent: React.FC<IProps> = ({ maxStars = 5, value = 0, label, onCha
 							})}
 							onMouseMove={e => onMouseMove(e, index)}
 							onClick={event => onMouseClick(event)}
-						>
-							☆
-						</span>
+						/>
 					);
 				})}
 			</div>
