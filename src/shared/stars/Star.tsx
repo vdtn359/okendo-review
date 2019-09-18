@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { range } from "@app/utils/array";
-import cn from "classnames";
-import { noop } from "@app/utils/object";
-import styles from "./Star.scss";
+import React, { useState } from 'react';
+import { range } from '@app/utils/array';
+import cn from 'classnames';
+import { noop } from '@app/utils/object';
+import styles from './Star.scss';
 
 interface IProps {
 	label: string;

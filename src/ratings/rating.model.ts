@@ -1,4 +1,4 @@
-import { a, is, schema } from "yup-decorator";
+import { a, is, schema } from 'yup-decorator';
 
 @schema()
 export class RatingModel {

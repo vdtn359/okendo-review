@@ -1,7 +1,7 @@
-import React from "react";
-import { range } from "@app/utils/array";
-import cn from "classnames";
-import styles from "./NumberRangeField.scss";
+import React from 'react';
+import { range } from '@app/utils/array';
+import cn from 'classnames';
+import styles from './NumberRangeField.scss';
 
 interface IProps {
 	max?: number;

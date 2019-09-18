@@ -1,9 +1,9 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { Provider } from "react-redux";
-import "./styles.scss";
-import { createAppStore } from "@app/store";
-import { ReviewForm } from "./ReviewForm";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { Provider } from 'react-redux';
+import './styles.scss';
+import { createAppStore } from '@app/store';
+import { ReviewForm } from './ReviewForm';
 
 const store = createAppStore();
 

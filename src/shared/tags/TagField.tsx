@@ -1,6 +1,6 @@
-import React from "react";
-import cn from "classnames";
-import styles from "./TagField.scss";
+import React from 'react';
+import cn from 'classnames';
+import styles from './TagField.scss';
 
 interface IProps {
 	value: string[];

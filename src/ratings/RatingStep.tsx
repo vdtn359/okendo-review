@@ -1,14 +1,14 @@
-import React from "react";
-import { FormField } from "@app/shared/forms/FormField";
-import { Formik } from "formik";
-import { connect } from "react-redux";
-import { NumberRange } from "@app/shared/number/NumberRangeField";
-import { TagField } from "@app/shared/tags/TagField";
-import { Select } from "@app/shared/forms/SelectField";
-import { COUNTRIES } from "@app/shared/countries";
-import { getSchemaByType } from "yup-decorator";
-import { RatingModel } from "@app/ratings/rating.model";
-import { saveRatingForm } from "@app/action";
+import React from 'react';
+import { FormField } from '@app/shared/forms/FormField';
+import { Formik } from 'formik';
+import { connect } from 'react-redux';
+import { NumberRange } from '@app/shared/number/NumberRangeField';
+import { TagField } from '@app/shared/tags/TagField';
+import { Select } from '@app/shared/forms/SelectField';
+import { COUNTRIES } from '@app/shared/countries';
+import { getSchemaByType } from 'yup-decorator';
+import { RatingModel } from '@app/ratings/rating.model';
+import { saveRatingForm } from '@app/action';
 
 interface IProps {
 	onSubmit: () => void;

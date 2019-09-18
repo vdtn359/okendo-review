@@ -1,14 +1,14 @@
-import React from "react";
-import { Star } from "@app/shared/stars/Star";
-import { FormField } from "@app/shared/forms/FormField";
-import { Formik } from "formik";
-import { connect } from "react-redux";
-import { Input } from "@app/shared/forms/InputField";
-import { TextArea } from "@app/shared/forms/TextAreaField";
-import { YesNoButton } from "@app/shared/buttons/YesNoButton";
-import { getSchemaByType } from "yup-decorator";
-import { ReviewModel } from "@app/review/review.model";
-import { saveReviewForm } from "@app/action";
+import React from 'react';
+import { Star } from '@app/shared/stars/Star';
+import { FormField } from '@app/shared/forms/FormField';
+import { Formik } from 'formik';
+import { connect } from 'react-redux';
+import { Input } from '@app/shared/forms/InputField';
+import { TextArea } from '@app/shared/forms/TextAreaField';
+import { YesNoButton } from '@app/shared/buttons/YesNoButton';
+import { getSchemaByType } from 'yup-decorator';
+import { ReviewModel } from '@app/review/review.model';
+import { saveReviewForm } from '@app/action';
 
 interface IProps {
 	onSubmit: () => void;

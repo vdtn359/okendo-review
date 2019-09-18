@@ -1,6 +1,6 @@
-import React from "react";
-import cn from "classnames";
-import styles from "./SelectField.scss";
+import React from 'react';
+import cn from 'classnames';
+import styles from './SelectField.scss';
 
 const SelectComponent: React.FC<any> = ({
 	options = [],

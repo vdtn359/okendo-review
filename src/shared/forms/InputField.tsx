@@ -1,6 +1,6 @@
-import React from "react";
-import cn from "classnames";
-import styles from "./InputField.scss";
+import React from 'react';
+import cn from 'classnames';
+import styles from './InputField.scss';
 
 const InputComponent: React.FC<any> = ({ label, name, onChange, error, ...props }) => {
 	return (

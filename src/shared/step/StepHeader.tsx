@@ -1,8 +1,8 @@
-import React from "react";
-import cn from "classnames";
-import { ucfirst } from "../../utils/string";
-import { noop } from "../../utils/object";
-import styles from "./StepHeader.scss";
+import React from 'react';
+import cn from 'classnames';
+import { ucfirst } from '../../utils/string';
+import { noop } from '../../utils/object';
+import styles from './StepHeader.scss';
 
 interface IProps {
 	steps: IStep[];
