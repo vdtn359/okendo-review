@@ -6,12 +6,19 @@ interface IProps {
 	label: string;
 	checked?: boolean;
 	onChange: (e: any, { checked: boolean }) => void;
+	error: string;
 }
 
-const YesNoButtonComponent: React.FC<IProps> = ({ label, checked, onChange }) => {
+const YesNoButtonComponent: React.FC<IProps> = ({ label, checked, onChange, error }) => {
 	return (
 		<>
-			<label>{label}</label>
+			<label
+				className={cn(styles.fieldLabel, {
+					error: !!error,
+				})}
+			>
+				{label}
+			</label>
 			<div className={styles.btnContainer}>
 				<div
 					className={cn(`${styles.btnToggle}`, {
@@ -30,6 +37,7 @@ const YesNoButtonComponent: React.FC<IProps> = ({ label, checked, onChange }) =>
 					NO
 				</div>
 			</div>
+			{error && <span className={'error-text'}>{error}</span>}
 		</>
 	);
 };

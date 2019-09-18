@@ -19,7 +19,7 @@ export interface FormFieldProps extends FieldConfig, FormFieldEvents {
 export const getFormikFieldError = (form, field) => {
 	const { name } = field;
 	const touched = getIn(form.touched, name);
-	return touched && getIn(form.errors, name);
+	return (touched || form.submitCount > 0) && getIn(form.errors, name);
 };
 
 export const getFormikValue = (formik: FormikContext<any>, name) => {

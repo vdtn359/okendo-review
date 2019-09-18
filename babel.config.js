@@ -14,10 +14,10 @@ module.exports = function(api) {
 			'@babel/typescript',
 		],
 		plugins: [
-			'@babel/plugin-proposal-object-rest-spread',
-			'babel-plugin-transform-typescript-metadata',
-			['@babel/plugin-proposal-class-properties', { loose: true }],
 			['@babel/plugin-proposal-decorators', { legacy: true }],
+			['@babel/plugin-proposal-class-properties', { loose: true }],
+			'babel-plugin-transform-typescript-metadata',
+			'@babel/plugin-proposal-object-rest-spread',
 		],
 	};
 };

@@ -10,4 +10,14 @@
 	.text-align-center {
 		text-align: center;
 	}
+
+	.error {
+		color: $color-red;
+	}
+
+	.error-text {
+		color: $color-red;
+		display: block;
+		margin-top: 0.5rem;
+	}
 }

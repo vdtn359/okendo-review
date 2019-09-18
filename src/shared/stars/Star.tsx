@@ -9,13 +9,20 @@ interface IProps {
 	maxStars?: number;
 	value?: number;
 	onChange?: (event, { value }: { value: number }) => void;
+	error: string;
 }
 
-const StarComponent: React.FC<IProps> = ({ maxStars = 5, value = 0, label, onChange = noop }) => {
+const StarComponent: React.FC<IProps> = ({ maxStars = 5, value = 0, label, onChange = noop, error }) => {
 	const [currentStars, setCurrentStar] = useState(value);
 	return (
 		<>
-			<div>{label}</div>
+			<div
+				className={cn({
+					error: !!error,
+				})}
+			>
+				{label}
+			</div>
 			<div className={styles.starContainer} onMouseLeave={() => onMouseLeave()}>
 				{range(0, maxStars).map((star, index) => {
 					return (
@@ -33,6 +40,7 @@ const StarComponent: React.FC<IProps> = ({ maxStars = 5, value = 0, label, onCha
 					);
 				})}
 			</div>
+			{error && <span className={'error-text'}>{error}</span>}
 		</>
 	);
 

@@ -1,19 +1,28 @@
 import React from 'react';
+import cn from 'classnames';
 import styles from './InputField.scss';
 
-const InputComponent: React.FC<any> = ({ label, name, onChange, ...props }) => {
+const InputComponent: React.FC<any> = ({ label, name, onChange, error, ...props }) => {
 	return (
 		<div className={styles.field}>
 			{label && (
-				<label className={styles.fieldLabel} htmlFor={name}>
+				<label
+					className={cn(styles.fieldLabel, {
+						error: !!error,
+					})}
+					htmlFor={name}
+				>
 					{label}
 				</label>
 			)}
 			<input
-				className={`marg-top-5 ${styles.fieldInput}`}
+				className={cn('marg-top-5', styles.fieldInput, {
+					[styles.fieldInputError]: error,
+				})}
 				onChange={e => onChange(e, { value: e.target.value })}
 				{...props}
 			/>
+			{error && <span className={'error-text'}>{error}</span>}
 		</div>
 	);
 };

@@ -5,13 +5,15 @@ import { Formik } from 'formik';
 import { Input } from '@app/shared/forms/InputField';
 import { TextArea } from '@app/shared/forms/TextAreaField';
 import { YesNoButton } from '@app/shared/buttons/YesNoButton';
+import { getSchemaByType } from 'yup-decorator';
+import { ReviewModel } from '@app/review/review.model';
 
 interface IProps {
 	onSubmit: () => void;
 }
 const ReviewStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 	return (
-		<Formik onSubmit={onSubmit} initialValues={{}}>
+		<Formik onSubmit={onSubmit} initialValues={{}} validationSchema={getSchemaByType(ReviewModel)}>
 			{props => (
 				<form onSubmit={props.handleSubmit}>
 					<div className={'container container--white pad-20'}>
