@@ -3,7 +3,9 @@ import cn from 'classnames';
 import { Formik } from 'formik';
 import { FormField } from '@app/shared/forms/FormField';
 import { Input } from '@app/shared/forms/InputField';
+import { getSchemaByType } from 'yup-decorator';
 import styles from './ConfirmStep.scss';
+import { GuessLoginModel } from "@app/confirm/confirm.model";
 
 interface IProps {
 	onSubmit: () => void;
@@ -25,7 +27,7 @@ const ConfirmStepComponent: React.FC<IProps> = ({ onSubmit }) => {
 				</button>
 			)}
 			{guestLogin && (
-				<Formik onSubmit={loginGuest} initialValues={{}}>
+				<Formik onSubmit={loginGuest} initialValues={{}} validationSchema={getSchemaByType(GuessLoginModel)}>
 					{props => (
 						<form className={styles.guestForm} onSubmit={props.handleSubmit}>
 							<div>Continue as Guest</div>
